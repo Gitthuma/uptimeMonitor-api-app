@@ -21,6 +21,10 @@ const server = http.createServer(function(req, res){
 
     const parsedUrl = url.parse(req.url,true); // Correct perse to parse
 
+    /*Get path from parsedUrl object. pathname is a key set on parsedUrl object, which is basically an untrimmed path that the user requested.*/
+
+    const path =parsedUrl.pathname;
+
     res.end('Hello World\n');
 
 });
