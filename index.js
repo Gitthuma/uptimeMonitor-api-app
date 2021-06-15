@@ -19,7 +19,7 @@ const server = http.createServer(function(req, res){
 
     /*Using the url library, get the url and perse it. We do this by creating a variable and assigning it the value url.perse which takes two parametres, the requested url and a boolian true. The second parametre asks the query string module to perse metadata about the requested url.*/
 
-    const persedUrl = url.perse(req.url,true);
+    const parsedUrl = url.parse(req.url,true); // Correct perse to parse
 
     res.end('Hello World\n');
 
