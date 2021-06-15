@@ -23,7 +23,10 @@ const server = http.createServer(function(req, res){
 
     /*Get path from parsedUrl object. pathname is a key set on parsedUrl object, which is basically an untrimmed path that the user requested.*/
 
+    /*Get trimmed path. This will trim off from our url any of the symbols in the first parametre and replace them with an empty space in the second parametre.*/
+
     const path =parsedUrl.pathname;
+    const trimmedPath = path.replace(/^\/+|\/+$/g,'');
 
     res.end('Hello World\n');
 
