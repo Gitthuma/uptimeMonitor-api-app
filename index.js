@@ -28,6 +28,7 @@ const server = http.createServer(function(req, res){
     const path =parsedUrl.pathname;
     const trimmedPath = path.replace(/^\/+|\/+$/g,'');
 
+    /*Send the response. We will use our original response in the function.*/
     res.end('Hello World\n');
 
 });
