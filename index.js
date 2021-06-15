@@ -31,6 +31,10 @@ const server = http.createServer(function(req, res){
     /*Send the response. We will use our original response in the function.*/
     res.end('Hello World\n');
 
+    /*Log the request path.*/
+
+    console.log('Request received on path: ' + trimmedPath);
+
 });
 
 /*Start the server and have it listen to port 3000. We do this using server.listen and pass it the port number and a call back funtion that tell us when the server is done listening.*/
