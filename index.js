@@ -28,7 +28,7 @@ const server = http.createServer(function(req, res){
     const path =parsedUrl.pathname;
     const trimmedPath = path.replace(/^\/+|\/+$/g,'');
 
-    /*Get HTTP Method. This will tell us which HTTP method the user is requesting. Method include POST, GET, PUT, DELETE and HEAD. The method is one of the objects available in the (req) object. We also specify that everything is in lower case. */
+    /*Define how to get HTTP Method. This will tell us which HTTP method the user is requesting. Method include POST, GET, PUT, DELETE and HEAD. The method is one of the objects available in the (req) object. We also specify that everything is in lower case. */
 
     const method = req.method.toLowerCase();
 
@@ -36,8 +36,9 @@ const server = http.createServer(function(req, res){
     res.end('Hello World\n');
 
     /*Log the request path.*/
+    /*Modify log out statment to include HTTP method*/
 
-    console.log('Request received on path: ' + trimmedPath);
+    console.log('Request received on path: ' + trimmedPath + 'with method: ' + method);
 
 });
 
