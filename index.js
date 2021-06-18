@@ -28,6 +28,10 @@ const server = http.createServer(function(req, res){
     const path =parsedUrl.pathname;
     const trimmedPath = path.replace(/^\/+|\/+$/g,'');
 
+    /*Get HTTP Method. This will tell us which HTTP method the user is requesting. Method include POST, GET, PUT, DELETE and HEAD. The method is one of the objects available in the (req) object. We also specify that everything is in lower case. */
+
+    const method = req.method.toLowerCase();
+
     /*Send the response. We will use our original response in the function.*/
     res.end('Hello World\n');
 
