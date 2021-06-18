@@ -28,6 +28,10 @@ const server = http.createServer(function(req, res){
     const path =parsedUrl.pathname;
     const trimmedPath = path.replace(/^\/+|\/+$/g,'');
 
+    /*Get the query string as an object and assign it to a variable. We do this by declaring a variable and assigning it the querry from parsedURL. The query object can be found inb the parsedURL thatnks to the true boolian value we assigned to the url.parse parametres. This means that if someone sends a url with queries, they will be parsed to our query string object.*/
+
+    const queryStringObject = parsedUrl.query;
+
     /*Define how to get HTTP Method. This will tell us which HTTP method the user is requesting. Method include POST, GET, PUT, DELETE and HEAD. The method is one of the objects available in the (req) object. We also specify that everything is in lower case. */
 
     const method = req.method.toLowerCase();
