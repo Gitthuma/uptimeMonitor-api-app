@@ -48,7 +48,7 @@ const server = http.createServer(function(req, res){
     /*Modify log out statement to include queryStringObject output*/
     /*Modify log out statement to include headers output*/
 
-    console.log('Request received on path: ' + trimmedPath + 'with method: ' + method + ' with these query string parametres',queryStringObject) + 'Request received with these headers',headers;
+    console.log('Request received on path: ' + trimmedPath + 'with method: ' + method + ' with these query string parametres',queryStringObject + 'Request received with these headers',headers); //syntax error correction
 
 });
 
