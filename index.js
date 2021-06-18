@@ -41,8 +41,9 @@ const server = http.createServer(function(req, res){
 
     /*Log the request path.*/
     /*Modify log out statment to include HTTP method*/
+    /*Modify log out statement to include queryStringObject output*/
 
-    console.log('Request received on path: ' + trimmedPath + 'with method: ' + method);
+    console.log('Request received on path: ' + trimmedPath + 'with method: ' + method + ' and with these query string parametres',queryStringObject);
 
 });
 
