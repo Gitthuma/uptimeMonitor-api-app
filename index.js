@@ -36,6 +36,10 @@ const server = http.createServer(function(req, res){
 
     const method = req.method.toLowerCase();
 
+    /*Get the headers as an object*/
+
+    const headers = req.headers;
+
     /*Send the response. We will use our original response in the function.*/
     res.end('Hello World\n');
 
