@@ -43,7 +43,11 @@ const server = http.createServer(function(req, res){
 
     const headers = req.headers;
 
-    /*Get the payload if any. For this we will need a library called string decoder, So we are going to require it as one of the dependancies.*/ 
+    /*Get the payload if any. For this we will need a library called string decoder, So we are going to require it as one of the dependancies.*/
+    
+    /*Create a new string decorder. When you create a string decoder, you should tell it what char set to expect and in our case is utf-8. This is the case for most JSON API*/
+
+    const decoder = new StringDecoder('utf-8');
 
 
     /*Send the response. We will use our original response in the function.*/
