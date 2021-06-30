@@ -55,7 +55,7 @@ const server = http.createServer(function(req, res){
 
     const decoder = new StringDecoder('utf-8');
 
-    const buffer = '';
+    var buffer = ''; //Changed variable from const to var
 
     req.on('data', function(data){
 
