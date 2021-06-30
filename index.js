@@ -74,8 +74,9 @@ const server = http.createServer(function(req, res){
     /*Modify log out statment to include HTTP method*/
     /*Modify log out statement to include queryStringObject output*/
     /*Modify log out statement to only include headers output*/
+    /*Modify log out statement to only include payload request*/
 
-    console.log('Request received with these headers',headers); 
+    console.log('Request received with this payload: ', buffer); 
     })
 
 });
