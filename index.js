@@ -10,8 +10,11 @@
 
 /*Import url library. This will parse url that client are asking for. Url is one of the resources that people will interact with when interacting with the API.*/
 
+/*Require a library called string decoder. The StringDecoder library has other things but for our purpose we need the StringDecoder property of that object.*/
+
 const http = require('http');
 const url = require('url');
+const StringDecoder = require('string_decoder').StringDecoder;
 
 /*Use the http module defined to configure the server so that it responds to all requests of type string. We do this by creating a server object. Then use http.createServer to create the server and pass it a call back function. The call back function will accept two parametres, req which stands for request and res which stands for respond. We will then use a built in function inside the res object to send a string back in response to any request.*/
 
@@ -39,6 +42,9 @@ const server = http.createServer(function(req, res){
     /*Get the headers as an object*/
 
     const headers = req.headers;
+
+    /*Get the payload if any. For this we will need a library called string decoder, So we are going to require it as one of the dependancies.*/ 
+
 
     /*Send the response. We will use our original response in the function.*/
     res.end('Hello World\n');
