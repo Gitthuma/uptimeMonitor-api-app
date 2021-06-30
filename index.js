@@ -59,7 +59,7 @@ const server = http.createServer(function(req, res){
 
     req.on('data', function(data){
 
-        buffer += decorder.write(data);
+        buffer += decoder.write(data); //corrected syntax
 
     });
 
@@ -77,7 +77,7 @@ const server = http.createServer(function(req, res){
         /*Modify log out statement to only include payload request*/
 
         console.log('Request received with this payload: ', buffer); 
-        
+
     });
 
 });
