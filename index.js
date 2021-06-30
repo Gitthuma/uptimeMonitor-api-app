@@ -68,16 +68,17 @@ const server = http.createServer(function(req, res){
         buffer += decoder.end();
 
         /*Send the response. We will use our original response in the function.*/
-    res.end('Hello World\n');
+        res.end('Hello World\n');
 
-    /*Log the request path.*/
-    /*Modify log out statment to include HTTP method*/
-    /*Modify log out statement to include queryStringObject output*/
-    /*Modify log out statement to only include headers output*/
-    /*Modify log out statement to only include payload request*/
+        /*Log the request path.*/
+        /*Modify log out statment to include HTTP method*/
+        /*Modify log out statement to include queryStringObject output*/
+        /*Modify log out statement to only include headers output*/
+        /*Modify log out statement to only include payload request*/
 
-    console.log('Request received with this payload: ', buffer); 
-    })
+        console.log('Request received with this payload: ', buffer); 
+        
+    });
 
 });
 
