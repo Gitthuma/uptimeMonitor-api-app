@@ -51,20 +51,23 @@ const server = http.createServer(function(req, res){
     
     /*We then need another event that tells us that the stream is done, when it is done, that event is called end. When the request object emits end, we call a function call back that doesn't take any parametres that will append the buffer with decoder.end()*/
 
+    /*After the end event is done, we need to continue with the other processes namely sending response and loggin the request. To do this we need to change the position of both response code and the logging code from where they are into the handler of the end event. This is done because even when the request doesnt have a payload, the end event will still be called.*/
+
     const decoder = new StringDecoder('utf-8');
 
     const buffer = '';
 
     req.on('data', function(data){
+
         buffer += decorder.write(data);
+
     });
-    
+
     req.on('end', function(){
+
         buffer += decoder.end();
-    })
 
-
-    /*Send the response. We will use our original response in the function.*/
+        /*Send the response. We will use our original response in the function.*/
     res.end('Hello World\n');
 
     /*Log the request path.*/
@@ -72,8 +75,8 @@ const server = http.createServer(function(req, res){
     /*Modify log out statement to include queryStringObject output*/
     /*Modify log out statement to only include headers output*/
 
-
     console.log('Request received with these headers',headers); 
+    })
 
 });
 
