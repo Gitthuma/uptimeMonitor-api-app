@@ -94,9 +94,12 @@ server.listen(3000, function(){
 
 const handlers = {};
 
-/*Write the sample handler structure. Its going to be a function that accepts data and a callback as parametres.*/
+/*Write the sample handler structure. Its going to be a function that accepts data and a callback as parametres. The data that it receives will be a bulk of everything contained in the request. The callback will be what the handlers will output after they are done handling the request. the output will include two things: the HTTP status code and a payload which should be an object*/
 
 handlers.sample = function(data, callback){
+
+    //Callback a HTTP status code and a payload object
+    callback(406, {'name' : 'sample handler'})
 
 };
 
