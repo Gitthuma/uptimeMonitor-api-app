@@ -90,6 +90,10 @@ server.listen(3000, function(){
     
 });
 
+/*Define handlers. This is where the router will route traffic to when a request is called, to find a  corresponding handler. We will name it handlers and initialize it to an empty object.*/
+
+const handlers = {};
+
 /*Define a request router. This will route the requests to their respective handlers. We will call it router and it is going to be an object. This is because each path is unique so an object will be best for the work.We will define one path for now, the path will be called sample and it will call the sample path handler.*/
 
 const router = {
