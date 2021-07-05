@@ -99,13 +99,16 @@ const handlers = {};
 handlers.sample = function(data, callback){
 
     //Callback a HTTP status code and a payload object
-    callback(406, {'name' : 'sample handler'})
+    callback(406, {'name' : 'sample handler'});
 
 };
 
 /*Define the not found handler structure. We dont need to write this inside the router as it will only be called when nothing matches anything else in the router. This will be a function that accepts data and a callback as parametres.*/
 
 handlers.notFound = function(data, callback){
+
+    //Callback a HTTP status
+    callback(404);
 
 };
 
